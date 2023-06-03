@@ -64,8 +64,7 @@ def planificacionPrioritaria(procesos, prioridad):
         tiempoTotal+=tiempoEspera
         tiempoEspera+=procesos[k]
     print()
-    valores = list(prioridadOrdenada.values())
-    arrEspera.append(valores[-1]+arrEspera[-1])
+    arrEspera.append(sum(procesos.values()))
     for i in range(len(arrEspera)-1):        
         cprint(f"{arrEspera[i]}    {arrEspera[i+1]}","blue",end=" ",attrs=["bold"])
     print()
@@ -111,7 +110,8 @@ def roundRobin(procesos, quantum):
                 contador+=1
                 break
     print()
-    arrEspera.append(quantum+arrEspera[-1])
+    s = sum(procesos.values())
+    arrEspera.append(s)
     for i in range(len(arrEspera)-1):        
         cprint(f"{arrEspera[i]}    {arrEspera[i+1]}","blue",end=" ",attrs=["bold"])
     print()
