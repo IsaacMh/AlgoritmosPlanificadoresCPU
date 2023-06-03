@@ -80,10 +80,10 @@ def roundRobin(procesos, quantum):
     # para cambiar solo el array arrcambiar
     arrCambiar = procesos.copy()
     contador = 0
-    for i in range(0,tiempo+quantum):          
+    for i in range(tiempo+quantum*len(procesos)):          
         aux = contador    
         #l es el limite a partir del contador + el num de procesos
-        l = aux + len(procesos)   
+        l = aux + len(procesos)
         #para buscar entre los procesos en orden 
         while(aux<l):
             # x es el proceso P1,P2,P3,etc
